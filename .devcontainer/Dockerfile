@@ -8,7 +8,7 @@ ARG DEBIAN_FRONTEND=noninteractive
 RUN apt-get update && apt-get install -y \
       ros-$ROS_DISTRO-aws-robomaker-small-warehouse-world \
       ros-$ROS_DISTRO-foxglove-bridge \
-      ros-$ROS_DISTRO-navigation2 \
+      ros-$ROS_DISTRO-nav2-bringup \
       ros-$ROS_DISTRO-rviz2 \
       ros-$ROS_DISTRO-turtlebot3-simulations \
     && rm -rf /var/lib/apt/lists/*
