@@ -8,6 +8,7 @@ on:
   push:
     branches:
       - main
+      - devcontainer
     paths:
       - '.devcontainer/Dockerfile'
       - '.github/workflows/update_docker_image.yaml'
