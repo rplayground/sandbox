@@ -6,3 +6,6 @@
 # Files
 .dockerignore
 .gitignore
+
+# Python
+__pycache__/
