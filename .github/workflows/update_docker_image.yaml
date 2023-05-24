@@ -10,7 +10,7 @@ on:
       - main
       - devcontainer
     paths:
-      - '.devcontainer/Dockerfile'
+      - 'Dockerfile'
       - '.github/workflows/update_docker_image.yaml'
 
 jobs:
