@@ -1,6 +1,6 @@
 # RPlayground Sandbox
 
-An example sandbox playground for teaching robotics development.
+A sandbox playground for robotics development.
 
 ## Background
 
