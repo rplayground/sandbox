@@ -9,10 +9,8 @@ on:
     branches:
       - main
     paths:
-      - '**/package.xml'
-      - '**/*.repos'
-      - 'Dockerfile'
-      - '.github/workflows/update_ci_image.yaml'
+      - '.devcontainer/Dockerfile'
+      - '.github/workflows/update_docker_image.yaml'
 
 jobs:
   check_docker_files:
