@@ -1,11 +1,12 @@
 {
     "name": "Sandbox",
-    "build": {
-        "dockerfile": "../Dockerfile",
-        "context": "..",
-        "target": "visualizer",
-        "cacheFrom": "ghcr.io/rplayground/sandbox:main"
-    },
+    "image": "ghcr.io/rplayground/sandbox:main",
+    // "build": {
+    //     "dockerfile": "../Dockerfile",
+    //     "context": "..",
+    //     "target": "visualizer",
+    //     "cacheFrom": "ghcr.io/rplayground/sandbox:main"
+    // },
     "runArgs": [
         // "--cap-add=SYS_PTRACE", // enable debugging, e.g. gdb
         // "--ipc=host", // shared memory transport with host, e.g. rviz GUIs
