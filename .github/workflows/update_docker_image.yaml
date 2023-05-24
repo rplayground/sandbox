@@ -76,9 +76,6 @@ jobs:
           created=$(date -u +'%Y-%m-%dT%H:%M:%SZ')
           echo "created=${created}" >> $GITHUB_OUTPUT
 
-          version=$(grep -oP '(?<=<version>).*?(?=</version>)' navigation2/package.xml)
-          echo "version=${version}" >> $GITHUB_OUTPUT
-
           no_cache=false
           if  [ "${{needs.check_docker_files.outputs.no_cache}}" == 'true' ] || \
               [ "${{needs.check_docker_image.outputs.no_cache}}" == 'true' ]
@@ -109,7 +106,6 @@ jobs:
           target: visualizer
           tags: |
             ghcr.io/${{ github.repository }}:${{ github.ref_name }}
-            ghcr.io/${{ github.repository }}:${{ github.ref_name }}-${{ steps.config.outputs.version }}
           labels: |
             org.opencontainers.image.authors=${{ github.event.repository.owner.html_url }}
             org.opencontainers.image.created=${{ steps.config.outputs.created }}
@@ -122,7 +118,6 @@ jobs:
             org.opencontainers.image.title=${{ github.event.repository.name }}
             org.opencontainers.image.url=${{ github.event.repository.html_url }}
             org.opencontainers.image.vendor=${{ github.event.repository.owner.login }}
-            org.opencontainers.image.version=${{ steps.config.outputs.version }}
       - name: Image digest
         if: steps.config.outputs.trigger == 'true'
         run: echo ${{ steps.docker_build.outputs.digest }}
