@@ -7,4 +7,4 @@ set -eo pipefail
 # set -x
 # env
 
-echo TODO
+echo "Done!"
