@@ -66,8 +66,8 @@ RUN cd $GZWEB_WS && . /usr/share/gazebo/setup.sh && \
     sed -i "s|var modelList =|var modelList = []; var oldModelList =|g" gz3d/src/gzgui.js && \
     xvfb-run -s "-screen 0 1280x1024x24" ./deploy.sh -m local && \
     ln -s $GZWEB_WS/http/client/assets http/client/assets/models && \
-    ln -s $GZWEB_WS/http/client/assets/turtlebot3_common/meshes/ \
-      $GZWEB_WS/http/client/assets/turtlebot3_waffle/meshes/ && \
+    ln -s $GZWEB_WS/http/client/assets/turtlebot3_common/meshes \
+      $GZWEB_WS/http/client/assets/turtlebot3_waffle/meshes && \
     ln -s $GZWEB_WS/http/client $ROOT_SRV/gzweb
 
 # patch gzsever
