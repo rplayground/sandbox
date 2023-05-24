@@ -1,0 +1,38 @@
+{
+    "name": "Sandbox",
+    "build": {
+        "dockerfile": "../Dockerfile",
+        "context": "..",
+        "target": "visualizer",
+        "cacheFrom": "ghcr.io/rplayground/sandbox:main"
+    },
+    "runArgs": [
+        // "--cap-add=SYS_PTRACE", // enable debugging, e.g. gdb
+        // "--ipc=host", // shared memory transport with host, e.g. rviz GUIs
+        // "--network=host", // network access to host interfaces, e.g. eth0
+        // "--pid=host", // DDS discovery with host, without --network=host
+        // "--privileged", // device access to host peripherals, e.g. USB
+        // "--security-opt=seccomp=unconfined", // enable debugging, e.g. gdb
+    ],
+    "workspaceFolder": "/opt/overlay_ws/src/sandbox",
+    "workspaceMount": "source=${localWorkspaceFolder},target=${containerWorkspaceFolder},type=bind",
+    "onCreateCommand": ".devcontainer/on-create-command.sh",
+    "updateContentCommand": ".devcontainer/update-content-command.sh",
+    "postCreateCommand": ".devcontainer/post-create-command.sh",
+    "customizations": {
+        "codespaces": {
+            "openFiles": [
+                "README.md"
+            ]
+        },
+        "vscode": {
+            "settings": {},
+            "extensions": [
+                "eamodio.gitlens",
+                "GitHub.copilot",
+                "ms-iot.vscode-ros",
+                "streetsidesoftware.code-spell-checker"
+            ]
+        }
+    }
+}

@@ -1,0 +1,11 @@
+# Folders
+.devcontainer/
+.git/
+.github/
+
+# Files
+.dockerignore
+.gitignore
+
+# Python
+__pycache__/
