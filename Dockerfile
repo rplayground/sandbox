@@ -10,6 +10,7 @@ RUN apt-get update && apt-get install -y \
       ros-$ROS_DISTRO-foxglove-bridge \
       ros-$ROS_DISTRO-nav2-bringup \
       ros-$ROS_DISTRO-rviz2 \
+      ros-$ROS_DISTRO-turtlebot3-description \
       ros-$ROS_DISTRO-turtlebot3-simulations \
     && rm -rf /var/lib/apt/lists/*
 
@@ -65,6 +66,8 @@ RUN cd $GZWEB_WS && . /usr/share/gazebo/setup.sh && \
     sed -i "s|var modelList =|var modelList = []; var oldModelList =|g" gz3d/src/gzgui.js && \
     xvfb-run -s "-screen 0 1280x1024x24" ./deploy.sh -m local && \
     ln -s $GZWEB_WS/http/client/assets http/client/assets/models && \
+    ln -s $GZWEB_WS/http/client/assets/turtlebot3_common/meshes/ \
+      $GZWEB_WS/http/client/assets/turtlebot3_waffle/meshes/ && \
     ln -s $GZWEB_WS/http/client $ROOT_SRV/gzweb
 
 # patch gzsever
