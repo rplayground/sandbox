@@ -1,9 +1,8 @@
-################################################################################
-# Repo
-
+# Folders
 .devcontainer/
-.dockerignore
 .git/
 .github/
+
+# Files
+.dockerignore
 .gitignore
-**Dockerfile
