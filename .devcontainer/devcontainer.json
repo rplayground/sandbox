@@ -1,5 +1,5 @@
 {
-    "name": "Nav2",
+    "name": "Sandbox",
     "build": {
         "dockerfile": "Dockerfile",
         "context": "..",
