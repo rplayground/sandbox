@@ -20,9 +20,9 @@ FROM builder AS dever
 RUN mv /etc/apt/apt.conf.d/docker-clean /etc/apt/
 
 # install developer dependencies
-RUN apt-get update && \
-    apt-get install -y \
+RUN apt-get update && apt-get install -y \
       bash-completion \
+      python3-pip \
       wget && \
     pip3 install \
       bottle \
